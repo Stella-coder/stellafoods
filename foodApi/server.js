@@ -5,11 +5,10 @@ const port = 4009;
 const router = require("./router");
 const app = express();
 app.use(cors());
-const url =
-  "mongodb+srv://L5bjWCPqd6IHur0Q:L5bjWCPqd6IHur0Q@backend.es1b8.mongodb.net/nfoodDB?retryWrites=true&w=majority";
+// const url = (process.env.MONGODB_URL);
 
 mongoose
-  .connect(url, {
+  .connect(MONGODB_URL, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true,
