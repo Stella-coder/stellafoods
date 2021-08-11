@@ -1,14 +1,17 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const port = process.env.PORT || 4009;
+const port = process.env.PORT || 5000;
 const router = require("./router");
 const app = express();
 app.use(cors());
 // const url = (process.env.MONGODB_URL);
+const url =
+  "mongodb+srv://L5bjWCPqd6IHur0Q:L5bjWCPqd6IHur0Q@backend.es1b8.mongodb.net/nfoodDB?retryWrites=true&w=majority";
 
 mongoose
-  .connect(MONGODB_URL, {
+  .connect(url, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true,
